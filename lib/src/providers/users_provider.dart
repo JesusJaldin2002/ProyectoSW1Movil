@@ -56,7 +56,7 @@ class UsersProvider extends GetConnect {
           colorText: const Color.fromARGB(255, 255, 255, 255),
           duration: const Duration(seconds: 1));
 
-      Get.offNamed('/login');
+      Get.offAllNamed('/login');
     }
   }
 }
