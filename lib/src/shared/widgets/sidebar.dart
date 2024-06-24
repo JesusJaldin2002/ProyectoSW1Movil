@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:proyecto_sw1_movil/src/providers/users_provider.dart';
-
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class Sidebar extends StatelessWidget {
-  Sidebar({super.key});
+  Sidebar({Key? key}) : super(key: key);
   final UsersProvider usersProvider = UsersProvider();
 
   @override
@@ -59,6 +59,16 @@ class Sidebar extends StatelessWidget {
                   onTap: () => _onItemTapped(0),
                 ),
                 ListTile(
+                  leading: const Icon(FontAwesomeIcons.language, color: Color(0xFF004D40)),
+                  title: const Text('WebView'),
+                  onTap: () => _onItemTapped(1),
+                ),
+                ListTile(
+                  leading: const Icon(FontAwesomeIcons.language, color: Color(0xFF004D40)),
+                  title: const Text('WebView'),
+                  onTap: () => _onItemTapped(1),
+                ),
+                ListTile(
                   leading: const Icon(Icons.exit_to_app, color: Color(0xFF004D40)),
                   title: const Text(
                     'Cerrar Sesión',
@@ -80,6 +90,9 @@ class Sidebar extends StatelessWidget {
     switch (index) {
       case 0:
         Get.offAllNamed('/home');
+        break;
+      case 1:
+        Get.offAllNamed('/webview');
         break;
       case 2:
         usersProvider.logout();

@@ -5,7 +5,7 @@ import 'package:proyecto_sw1_movil/src/screens/login/login_controller.dart';
 class LoginScreen extends StatelessWidget {
   final LoginController controller = Get.put(LoginController());
 
-  LoginScreen({super.key});
+  LoginScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

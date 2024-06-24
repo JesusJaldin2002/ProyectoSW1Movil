@@ -12,7 +12,7 @@ void main() async {
 }
 
 class MyApp extends StatefulWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   State<MyApp> createState() => _MyAppState();
@@ -35,6 +35,7 @@ class _MyAppState extends State<MyApp> {
         GetPage(name: '/', page: () => LoginScreen()),
         GetPage(name: '/home', page: () => const HomeScreen(), middlewares: [AuthMiddleware()]),
         GetPage(name: '/register', page: () => RegisterScreen(), middlewares: [AuthMiddleware()]),
+        GetPage(name: '/webview', page: () => const WebViewScreen(), middlewares: [AuthMiddleware()]),
 
         
       ],
@@ -49,6 +50,7 @@ class AuthMiddleware extends GetMiddleware {
     SharedPreferences.getInstance().then((prefs) {
       bool isAuthenticated = prefs.getBool('isAuthenticated') ?? false;
       if (!isAuthenticated) {
+        // ignore: avoid_print
         print('Not authenticated, redirecting to /');
         return const RouteSettings(name: '/');
       }

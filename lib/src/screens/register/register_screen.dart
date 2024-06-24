@@ -6,7 +6,7 @@ class RegisterScreen extends StatelessWidget {
 
   final RegisterController controller  = Get.put(RegisterController());
 
-  RegisterScreen({super.key});
+  RegisterScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
