@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -55,14 +56,14 @@ class _WebViewScreenState extends State<WebViewScreen> {
     return Scaffold(
       key: scaffoldKey,
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+        backgroundColor: const Color(0xFF004D40), // Color correspondiente al AppBar
         title: const Text(
-          'Web View',
+          'Traducción',
           style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
         ),
         actions: <Widget>[
           IconButton(
-            icon: const Icon(Icons.home),
+            icon: const Icon(FontAwesomeIcons.house),
             onPressed: () {
               Get.offAllNamed('/home');
             },

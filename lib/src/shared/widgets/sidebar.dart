@@ -60,7 +60,7 @@ class Sidebar extends StatelessWidget {
                 ),
                 ListTile(
                   leading: const Icon(FontAwesomeIcons.language, color: Color(0xFF004D40)),
-                  title: const Text('WebView'),
+                  title: const Text('Traducción'),
                   onTap: () => _onItemTapped(1),
                 ),
                 ListTile(
@@ -77,6 +77,7 @@ class Sidebar extends StatelessWidget {
                   onTap: () => _onItemTapped(2),
                 ),
               ],
+              
             ),
           );
         } else {
