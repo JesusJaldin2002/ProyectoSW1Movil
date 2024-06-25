@@ -8,7 +8,7 @@ class UsersProvider extends GetConnect {
   String url = Environment.apiUrl;
 
   Future<Response> register(User user) async {
-    Response response = await post('$url/register', user.toJson(),
+    Response response = await post('$url/api/register', user.toJson(),
         headers: {'Content-Type': 'application/json'});
 
     return response;
@@ -16,7 +16,7 @@ class UsersProvider extends GetConnect {
 
   Future<Response> login(String email, String password) async {
     Response response = await post(
-        '$url/login', {'email': email, 'password': password},
+        '$url/api/login', {'email': email, 'password': password},
         headers: {'Content-Type': 'application/json'});
 
     return response;
@@ -41,7 +41,7 @@ class UsersProvider extends GetConnect {
     if (token != null) {
       // Llama a la API para cerrar la sesión
       await post(
-        '$url/logout',
+        '$url/api/logout',
         {},
         headers: {
           'Authorization': 'Bearer $token',

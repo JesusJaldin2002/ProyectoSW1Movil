@@ -28,6 +28,7 @@ class LoginController extends GetxController {
 
         // Verificar si la respuesta contiene un error
         if (responseBody.containsKey('error')) {
+          print('Error de Login: ${responseBody['error']}');
           Get.snackbar('Error de Login', responseBody['error'],
               backgroundColor: const Color.fromARGB(255, 233, 93, 0),
               colorText: Colors.white);
@@ -39,11 +40,12 @@ class LoginController extends GetxController {
           await prefs.setString('user_name', responseBody['name']);
 
           String? savedToken = prefs.getString('token');
-          // ignore: avoid_print
           print('Token guardado: $savedToken');
           Get.toNamed('/home');
         }
       } else {
+        print('Código de estado de la respuesta: ${response.statusCode}');
+        print('Cuerpo de la respuesta: ${response.body}');
         Get.snackbar('Error de Login', 'Por favor vuelve a intentarlo',
             backgroundColor: const Color.fromARGB(255, 233, 93, 0),
             colorText: Colors.white);

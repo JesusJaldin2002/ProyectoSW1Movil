@@ -35,6 +35,7 @@ class _MyAppState extends State<MyApp> {
         GetPage(name: '/', page: () => LoginScreen()),
         GetPage(name: '/home', page: () => const HomeScreen(), middlewares: [AuthMiddleware()]),
         GetPage(name: '/register', page: () => RegisterScreen(), middlewares: [AuthMiddleware()]),
+        GetPage(name: '/learning', page: () => LearningScreen(), middlewares: [AuthMiddleware()]),
         GetPage(name: '/webview', page: () => const WebViewScreen(), middlewares: [AuthMiddleware()]),
 
         

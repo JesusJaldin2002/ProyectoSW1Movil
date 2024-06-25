@@ -54,7 +54,7 @@ class Sidebar extends StatelessWidget {
                   ),
                 ),
                 ListTile(
-                  leading: const Icon(Icons.home, color: Color(0xFF004D40)),
+                  leading: const Icon(FontAwesomeIcons.house, color: Color(0xFF004D40)),
                   title: const Text('Inicio'),
                   onTap: () => _onItemTapped(0),
                 ),
@@ -64,12 +64,12 @@ class Sidebar extends StatelessWidget {
                   onTap: () => _onItemTapped(1),
                 ),
                 ListTile(
-                  leading: const Icon(FontAwesomeIcons.language, color: Color(0xFF004D40)),
-                  title: const Text('WebView'),
-                  onTap: () => _onItemTapped(1),
+                  leading: const Icon(FontAwesomeIcons.book, color: Color(0xFF004D40)),
+                  title: const Text('Aprendizaje'),
+                  onTap: () => _onItemTapped(3),
                 ),
                 ListTile(
-                  leading: const Icon(Icons.exit_to_app, color: Color(0xFF004D40)),
+                  leading: const Icon(FontAwesomeIcons.arrowRightFromBracket, color: Color(0xFF004D40)),
                   title: const Text(
                     'Cerrar Sesión',
                     style: TextStyle(fontWeight: FontWeight.bold),
@@ -92,10 +92,13 @@ class Sidebar extends StatelessWidget {
         Get.offAllNamed('/home');
         break;
       case 1:
-        Get.offAllNamed('/webview');
+        Get.toNamed('/webview');
         break;
       case 2:
         usersProvider.logout();
+        break;
+      case 3:
+        Get.toNamed('/learning');
         break;
     }
   }
